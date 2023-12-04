@@ -15,3 +15,4 @@ const Avatar = ({avatar, setAvatar}:AvatarProps) => {
 }
 
 export default Avatar
+

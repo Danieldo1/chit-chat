@@ -4,22 +4,14 @@ import React, { useState } from 'react'
 import Avatar from './Avatar'
 import { handleSubmit } from '@/lib/fetchers'
 import { useRouter } from 'next/navigation'
-import { AppRouterInstance } from 'next/dist/shared/lib/app-router-context.shared-runtime'
-import { log } from 'console'
+
 
 const Form = () => {
     const [avatar, setAvatar] = useState((Math.random()*200).toFixed())
     const router = useRouter()
-    const handleSubmit = (e:any,router:AppRouterInstance) => {
-        e.preventDefault()
-        try {
-            
-        } catch (error) {
-            console.log(error)
-        }
-    }
+   
   return (
-    <form onSubmit={(e)=>handleSubmit(e,router)} className="flex flex-col gap-4">
+    <form onSubmit={(e)=>handleSubmit(e,router,avatar)} className="flex flex-col gap-4">
         <Avatar avatar={avatar} setAvatar={setAvatar} />
         <div className="flex flex-col gap-5 xl:flex-row">
             <div className="form-control w-full">
