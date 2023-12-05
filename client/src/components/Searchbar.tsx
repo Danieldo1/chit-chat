@@ -1,4 +1,4 @@
-'use client'
+
 
 import { userProps } from '@/types'
 import React from 'react'
@@ -6,7 +6,7 @@ import Image from 'next/image'
 import { SearchIcon } from '@/utils/icons'
 
 const Searchbar = ({user}: {user: userProps}) => {
-  console.log(user?.imageId)
+
   return (
     <div className='flex gap-4 '>
         <div className='avatar online py-1'>

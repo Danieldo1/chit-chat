@@ -24,7 +24,7 @@ const Sidebar = () => {
         <Searchbar user={myUser}  />
 
         {/* chat list */}
-        <ChatList />
+       {myUser && <ChatList mySelf={myUser} />} 
     </div>
   )
 }
