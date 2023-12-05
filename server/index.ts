@@ -8,18 +8,15 @@ import userRouter from './userRoute'
 import "dotenv/config"
 
 const app = express()
+const server = http.createServer(app)
+const PORT = process.env.PORT || 4000
+const db = mongoose.connection
 
+app.use(cors())
 app.use(express.json())
 
 mongoose.connect(process.env.MONGO_URL!)
-const db = mongoose.connection
 db.on('error', console.error.bind(console, 'connection error:'))
-const server = http.createServer(app)
-const PORT = process.env.PORT || 4000
-
-app.use(cors())
-
-
 db.once('open', () => {
     console.log('Database connected')
     server.listen(PORT, () => {
@@ -28,4 +25,4 @@ db.once('open', () => {
     })
 })
 
-app.use('/',userRouter,)
+app.use('/',userRouter)

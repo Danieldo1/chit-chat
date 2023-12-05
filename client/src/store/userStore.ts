@@ -4,5 +4,5 @@ import {create} from 'zustand'
 
 export const useUser = create<userState>((set) => ({
     myUser: undefined,
-    setUser: (user) => set({myUser: user}),
+    setUser:(user)=>set({myUser:user}),
 }))
